@@ -15,12 +15,6 @@
 		pieceNames.forEach((piece, index) => {
 			puzzlePieces[index].src = `images/${piece + this.dataset.puzzleref}.jpg`;
 			puzzlePieces[index].id = `${piece + this.dataset.puzzleref}`;
-
-		// refresh idea_1
-		//let element = document.getElementById("puzzle-board");
-			//while (element.firstChild) {
-  			//element.removeChild(element.firstChild); }
-
 		});
 
 
@@ -51,27 +45,11 @@
 		event.target.appendChild(document.querySelector(`#${currentImage}`));
 	}
 
-	// refresh_idea_2
-	//function getRectArea(width, height) {
-		//if (width > 0 && height > 0) {
-  	  	//return "width * height"; }
- 	 	//return 0; }
-
 	//add event handling here -> how is the user going to use our app?
 	//what triggers do we need?
 
-	// refresh_idea_3
-	//function addAllLiteners(){
-		//let dropPuzzle = document.querySelectorAll('.puzzle-pieces img');
-		//console.log("currentImage = ", currentImage);
-		//event.target.appendchild(document.querySelector('#${currentImage}'));}
-
-
-
 	// on the bottom buttons to change the puzzle image we're working with
 	puzzleButtons.forEach(button => button.addEventListener('click', changeImageSet));
-	window.location.replace("puzzle-board");
-
 
 	puzzlePieces.forEach(piece => piece.addEventListener('dragstart', allowDrag));
 
