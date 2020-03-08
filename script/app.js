@@ -45,6 +45,58 @@
 		event.target.appendChild(document.querySelector(`#${currentImage}`));
 	}
 
+//-----------------------------------------------------------------
+	//called as the draggable enters a droppable 
+  //needs to return false to make droppable area valid
+  function dragEnter(event) {
+
+    var drop = this;
+
+    //set the drop effect for this zone
+    event.dataTransfer.dropEffect = 'copy';
+    $(drop).addClass('drop-active');
+
+    event.preventDefault();
+    event.stopPropagation();
+
+  }
+  //called continually while the draggable is over a droppable 
+  //needs to return false to make droppable area valid
+  function dragOver(event) {
+    var drop = this;
+
+    //set the drop effect for this zone
+    event.dataTransfer.dropEffect = 'copy';
+    $(drop).addClass('drop-active');
+
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  //called when the draggable was inside a droppable but then left
+  function dragLeave(event) {
+    var drop = this;
+    $(drop).removeClass('drop-active');
+  }
+
+  //called continually as the draggable is dragged
+  function drag(event) {
+
+  }
+
+  //called when the draggable has been released (either on droppable or not)
+  //may be called on invalid or valid drop
+  function dragEnd(event) {
+
+    var drag = this;
+    $(drag).removeClass('drag-active');
+
+  }
+
+
+  //-----------------------------------------------------------------
+
+
 	//add event handling here -> how is the user going to use our app?
 	//what triggers do we need?
 
